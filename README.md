@@ -28,7 +28,7 @@ docker run \
 
 ## How to test the running app
 
-### Ask a question
+### Ask a question:
 
 ```curl
 curl --location 'http://localhost:8500/api/v1/chat' \
@@ -36,6 +36,14 @@ curl --location 'http://localhost:8500/api/v1/chat' \
 --data '{
     "question": "How do you define success?"
 }'
+```
+
+### Convert a audio file to verbatim:
+
+```curl
+curl --location --request GET 'http://localhost:8500/api/v1/transcription' \
+--form 'file="audio.mp3"' \
+--form 'model="whisper-1"'
 ```
 
 ##### Tags: `Spring Cloud OpenFeign` `Microservice` `OpenAI` `ChatGPT` `Docker`
